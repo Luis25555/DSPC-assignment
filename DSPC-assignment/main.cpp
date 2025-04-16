@@ -54,7 +54,7 @@ void extractWatermark(const Mat& image, Mat& extracted, Size wmSize) {
             Mat block = gray(Rect(j, i, BLOCK_SIZE, BLOCK_SIZE));
             Mat dctBlock;
             dct(block, dctBlock);
-
+            
             float coef = dctBlock.at<float>(3, 3);
             int wm_x = i / BLOCK_SIZE % wmSize.height;
             int wm_y = j / BLOCK_SIZE % wmSize.width;
